@@ -1,6 +1,6 @@
 'use client';
 
-import { IconCreditCard, IconClock, IconCheckCircle } from "@tabler/icons-react";
+import { IconCreditCard, IconClock, IconCircleCheck } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -44,7 +44,7 @@ export default function CreditPage() {
         </Card>
 
         <Card className="p-8">
-          <IconCheckCircle className="w-12 h-12 text-emerald-500 mb-6" />
+          <IconCircleCheck className="w-12 h-12 text-emerald-500 mb-6" />
           <h3 className="text-2xl font-semibold">Revolving Credit</h3>
           <p className="text-muted-foreground mt-3">
             Flexible credit lines that grow with your business.
