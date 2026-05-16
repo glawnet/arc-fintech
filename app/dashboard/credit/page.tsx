@@ -45,4 +45,20 @@ export default function CreditPage() {
 
         <Card className="p-8">
           <IconCheckCircle className="w-12 h-12 text-emerald-500 mb-6" />
-          <h3 className="text-2
+          <h3 className="text-2xl font-semibold">Revolving Credit</h3>
+          <p className="text-muted-foreground mt-3">
+            Flexible credit lines that grow with your business.
+          </p>
+        </Card>
+
+        <Card className="p-8">
+          <IconClock className="w-12 h-12 text-amber-500 mb-6" />
+          <h3 className="text-2xl font-semibold">Instant Approval</h3>
+          <p className="text-muted-foreground mt-3">
+            No paperwork. Decisions based on your real activity.
+          </p>
+        </Card>
+      </div>
+    </div>
+  );
+}
