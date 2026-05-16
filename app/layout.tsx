@@ -18,7 +18,6 @@
 
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { BridgeMonitor } from "@/components/bridge-monitor";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -49,7 +48,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <BridgeMonitor />
+          {/* <BridgeMonitor /> Temporarily disabled to fix build error */}
         </ThemeProvider>
       </body>
     </html>
