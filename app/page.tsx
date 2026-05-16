@@ -33,11 +33,12 @@ export default function Home() {
             <div className="flex gap-5 items-center font-semibold">
               <ThemeSwitcher />
               <Link href={"/"} className="flex items-center gap-2">
-                <span className="bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text text-transparent font-bold text-xl">
-                  Circle Fintech Starter
+                <span className="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent font-bold text-2xl">
+                  Payforge
                 </span>
               </Link>
             </div>
+            
             {!hasEnvVars ? (
               <EnvVarWarning />
             ) : (
@@ -47,6 +48,7 @@ export default function Home() {
             )}
           </div>
         </nav>
+
         <Hero />
       </div>
     </main>

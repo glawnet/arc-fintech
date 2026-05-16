@@ -27,8 +27,11 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "arc-fintech-starter-app",
-  description: "Modern multi-chain treasury management system",
+  title: "Payforge",
+  description: "Global treasury and cross-border payments on Arc • Built with Circle",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

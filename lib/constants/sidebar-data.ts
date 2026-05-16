@@ -20,35 +20,60 @@ import {
   IconDashboard,
   IconListDetails,
   IconWallet,
-  IconShieldCheck,
+  IconSend,
+  IconUsers,
+  IconRobot,
+  IconCreditCard,
+  IconSettings,
+  IconHistory,
 } from "@tabler/icons-react"
 
 export const sidebarData = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Demo User",
+    email: "you@payforge.co",
+    avatar: "/avatars/shadcn.jpg", // You can change this later
   },
   navMain: [
     {
-      title: "Dashboard",
+      title: "Overview",
       url: "/dashboard",
       icon: IconDashboard,
     },
     {
-      title: "Activity",
-      url: "/dashboard/activity",
-      icon: IconListDetails,
-    },
-    {
-      title: "Wallets",
-      url: "/dashboard/wallets",
+      title: "Treasury",
+      url: "/dashboard/treasury",
       icon: IconWallet,
     },
     {
-      title: "Compliance",
-      url: "/dashboard/compliance",
-      icon: IconShieldCheck,
+      title: "Payouts",
+      url: "/dashboard/payouts",
+      icon: IconSend,
+    },
+    {
+      title: "Recipients",
+      url: "/dashboard/recipients",
+      icon: IconUsers,
+    },
+    {
+      title: "Transactions",
+      url: "/dashboard/activity",
+      icon: IconHistory,
+    },
+    {
+      title: "Automations",
+      url: "/dashboard/automations",
+      icon: IconRobot,
+    },
+    {
+      title: "Credit",
+      url: "/dashboard/credit",
+      icon: IconCreditCard,
+    },
+    {
+      title: "Settings",
+      url: "/dashboard/settings",
+      icon: IconSettings,
     },
   ],
 }
