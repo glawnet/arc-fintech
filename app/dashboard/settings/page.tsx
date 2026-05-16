@@ -1,15 +1,10 @@
 'use client';
 
-import { useState } from "react";
 import { IconUser, IconBell, IconShield, IconCurrencyDollar, IconLogout } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
 
 export default function SettingsPage() {
-  const [notifications, setNotifications] = useState(true);
-  const [darkMode, setDarkMode] = useState(true);
-
   return (
     <div className="p-6 md:p-8 space-y-8">
       <div>
@@ -32,16 +27,14 @@ export default function SettingsPage() {
 
         {/* Notifications */}
         <Card className="p-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <IconBell className="w-8 h-8 text-muted-foreground" />
-              <div>
-                <h3 className="font-semibold">Notifications</h3>
-                <p className="text-sm text-muted-foreground">Receive alerts for payouts and balance</p>
-              </div>
+          <div className="flex items-center gap-4">
+            <IconBell className="w-8 h-8 text-muted-foreground" />
+            <div>
+              <h3 className="font-semibold">Notifications</h3>
+              <p className="text-sm text-muted-foreground">Receive alerts for payouts and low balance</p>
             </div>
-            <Switch checked={notifications} onCheckedChange={setNotifications} />
           </div>
+          <Button variant="outline" className="mt-6">Manage Notifications</Button>
         </Card>
 
         {/* Security */}
@@ -50,23 +43,20 @@ export default function SettingsPage() {
             <IconShield className="w-8 h-8 text-muted-foreground" />
             <div>
               <h3 className="font-semibold">Security</h3>
-              <p className="text-sm text-muted-foreground">Manage password and 2FA</p>
+              <p className="text-sm text-muted-foreground">Password, 2FA, and session management</p>
             </div>
           </div>
-          <Button variant="outline">Change Password</Button>
+          <Button variant="outline">Security Settings</Button>
         </Card>
 
         {/* Preferences */}
         <Card className="p-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <IconCurrencyDollar className="w-8 h-8 text-muted-foreground" />
-              <div>
-                <h3 className="font-semibold">Default Currency</h3>
-                <p className="text-sm text-muted-foreground">USDC is default</p>
-              </div>
+          <div className="flex items-center gap-4">
+            <IconCurrencyDollar className="w-8 h-8 text-muted-foreground" />
+            <div>
+              <h3 className="font-semibold">Currency &amp; Language</h3>
+              <p className="text-sm text-muted-foreground">Default currency is USDC</p>
             </div>
-            <span className="text-sm font-medium">USDC</span>
           </div>
         </Card>
 
