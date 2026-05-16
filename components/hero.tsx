@@ -25,157 +25,101 @@ import {
   CheckCircle,
   Wallet,
   Globe,
-  Code,
   ArrowRightLeft,
-  Fuel,
+  Clock,
+  Users,
 } from "lucide-react";
 
 export function Hero() {
   return (
     <div className="flex flex-col items-center w-full px-5">
       {/* Hero Section */}
-      <section className="w-full max-w-6xl space-y-16 py-8">
-        <div className="flex flex-col items-center gap-8">
-          {/* Main headline */}
-          <div className="relative">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <Code className="w-8 h-8 text-blue-500" />
-              <Zap className="w-8 h-8 text-amber-500" />
-            </div>
-            <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-amber-600 leading-tight">
-              Build Powerful Web3 Apps with Circle
-            </p>
-            <p className="mt-4 text-xl md:text-2xl text-center text-muted-foreground">
-              Seamlessly integrate wallets, payments, and smart contracts into your application.
-            </p>
+      <section className="w-full max-w-6xl space-y-16 py-12">
+        <div className="flex flex-col items-center gap-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
+            ⚡ Live on Arc Testnet
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
+            Global Payments.<br />
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
+              One Treasury.
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
+            The all-in-one platform for cross-border payouts, treasury management, 
+            and programmable finance — built on Arc with Circle.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Link href="/auth/sign-up">
+              <Button size="lg" className="text-lg px-10 py-7 rounded-2xl">
+                Get Started Free
+              </Button>
+            </Link>
+            <Link href="#how-it-works">
+              <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-2xl">
+                See How It Works
+              </Button>
+            </Link>
+          </div>
+
+          {/* Trust bar */}
+          <div className="flex flex-wrap justify-center gap-8 pt-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span>Regulatory Compliant</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-blue-500" />
-              <span>Global Reach</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-amber-500" />
+              <CheckCircle className="w-5 h-5 text-emerald-500" />
               <span>Instant Settlement</span>
             </div>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <section className="w-full space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">
-            Powerful Features for Developers
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <FeatureCard
-              icon={<Wallet className="w-8 h-8 text-blue-500" />}
-              title="Developer-Controlled Wallets"
-              description="Securely manage user assets with our custodial wallet infrastructure. Ideal for embedding wallets."
-            />
-            <FeatureCard
-              icon={<Globe className="w-8 h-8 text-green-500" />}
-              title="Circle Gateway"
-              description="Unified USDC cross-chain balance. Give users instant access to liquidity across multiple chains."
-            />
-            <FeatureCard
-              icon={<ArrowRightLeft className="w-8 h-8 text-amber-500" />}
-              title="Bridge Kit"
-              description="Move USDC between EVM and non-EVM chains with just a few lines of code. Hundreds of routes."
-            />
-             <FeatureCard
-              icon={<Fuel className="w-8 h-8 text-purple-500" />}
-              title="Gas Station"
-              description="Sponsor gas fees for your users. Enable a seamless, gasless experience for your application."
-            />
-          </div>
-        </section>
-      </section>
-
-      {/* How It Works Section - Full width background */}
-      <section className="w-full bg-gradient-to-b from-background to-muted/50 py-16 rounded-xl">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start px-5">
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-100 dark:bg-blue-900/50 rounded-full p-4 mb-4">
-                <Code className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Integrate SDK</h3>
-              <p className="text-sm text-muted-foreground">
-                Add Circle's SDK to your application in minutes.
-              </p>
+            <div className="flex items-center gap-2">
+              <Globe className="w-5 h-5 text-blue-500" />
+              <span>Cross-Border Payouts</span>
             </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-green-100 dark:bg-green-900/50 rounded-full p-4 mb-4">
-                <Wallet className="w-8 h-8 text-green-600 dark:text-green-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Create Wallets</h3>
-              <p className="text-sm text-muted-foreground">
-                Generate wallets for your users instantly.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900/50 rounded-full p-4 mb-4">
-                <Zap className="w-8 h-8 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Enable Features</h3>
-              <p className="text-sm text-muted-foreground">
-                Turn on Gas Station, Gateway, and more.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="bg-purple-100 dark:bg-purple-900/50 rounded-full p-4 mb-4">
-                <CheckCircle className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Go Live</h3>
-              <p className="text-sm text-muted-foreground">
-                Launch your app with enterprise-grade infrastructure.
-              </p>
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-emerald-500" />
+              <span>Compliant & Secure</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="w-full max-w-5xl py-16 space-y-8">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Ready to Build the Future of Finance?
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Start building with Circle's developer tools today.
-          </p>
-        </div>
-        <div className="flex justify-center gap-4">
-          <Link href="/auth/sign-up">
-            <Button size="lg">Get Started Now</Button>
-          </Link>
-           <Link href="https://developers.circle.com" target="_blank">
-            <Button variant="outline" size="lg">Read Documentation</Button>
-          </Link>
+      {/* Features */}
+      <section className="w-full max-w-6xl py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Built for Real Business Needs</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard
+            icon={<Globe className="w-10 h-10 text-emerald-500" />}
+            title="Global Payouts"
+            description="Send money to freelancers, suppliers, and teams in 100+ countries instantly with USDC."
+          />
+          <FeatureCard
+            icon={<Wallet className="w-10 h-10 text-indigo-500" />}
+            title="Smart Treasury"
+            description="Unified dashboard to manage, rebalance, and grow your stablecoin treasury across chains."
+          />
+          <FeatureCard
+            icon={<Clock className="w-10 h-10 text-purple-500" />}
+            title="Automation"
+            description="Set up recurring payments, approval workflows, and smart rules that run 24/7."
+          />
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full border-t border-border py-8">
-        <div className="max-w-5xl mx-auto px-5 text-center text-sm text-muted-foreground">
-          © 2026 Circle Internet Group. All rights reserved.
-        </div>
-      </footer>
+      {/* CTA */}
+      <section className="w-full max-w-5xl py-20 text-center border-t border-border">
+        <h2 className="text-4xl font-bold mb-6">Ready to Forge Better Finance?</h2>
+        <p className="text-xl text-muted-foreground mb-10">
+          Join businesses already moving money faster and cheaper on Arc.
+        </p>
+        <Link href="/auth/sign-up">
+          <Button size="lg" className="text-lg px-12 py-7 rounded-2xl">
+            Start Building on Payforge →
+          </Button>
+        </Link>
+      </section>
     </div>
   );
-};
+}
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -185,10 +129,10 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-card p-6 rounded-lg border border-border">
-      <div className="flex items-center justify-center mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-center mb-2">{title}</h3>
-      <p className="text-muted-foreground text-center">{description}</p>
+    <div className="bg-card p-8 rounded-2xl border border-border hover:border-primary/50 transition-all">
+      <div className="mb-6">{icon}</div>
+      <h3 className="text-2xl font-semibold mb-3">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 };
