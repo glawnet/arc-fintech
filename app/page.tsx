@@ -16,40 +16,45 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
 import { Hero } from "@/components/hero";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center">
-      <div className="flex-1 w-full flex flex-col gap-20 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <div className="flex gap-5 items-center font-semibold">
-              <ThemeSwitcher />
-              <Link href={"/"} className="flex items-center gap-2">
-                <span className="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent font-bold text-2xl">
-                  Payforge
-                </span>
-              </Link>
-            </div>
-            
-            {!hasEnvVars ? (
-              <EnvVarWarning />
-            ) : (
-              <Suspense>
-                <AuthButton />
-              </Suspense>
-            )}
+    <main className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+              Payforge
+            </span>
           </div>
-        </nav>
 
-        <Hero />
+          <div className="flex items-center gap-8 text-sm">
+            <Link href="#features" className="hover:text-white/70 transition">Features</Link>
+            <Link href="#how-it-works" className="hover:text-white/70 transition">How it Works</Link>
+            <Link href="/dashboard" className="hover:text-white/70 transition">Dashboard</Link>
+            <Link 
+              href="/auth/sign-up" 
+              className="bg-white text-black px-6 py-2.5 rounded-full font-medium hover:bg-white/90 transition"
+            >
+              Get Started Free
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <Hero />
+
+      {/* Trust Bar */}
+      <div className="border-b border-white/10 py-4">
+        <div className="max-w-6xl mx-auto px-6 flex justify-center items-center gap-12 text-sm text-muted-foreground">
+          <div>Built on Arc</div>
+          <div>Powered by Circle</div>
+          <div>USDC Native</div>
+          <div>Instant Settlement</div>
+        </div>
       </div>
     </main>
   );
